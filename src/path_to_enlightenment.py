@@ -10,7 +10,7 @@ def main():
 
     climb_mountain(queries, solutions)
 
-mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>]*)"
+mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>%]*)"
 
 def load_queries():
     with open('koans/solutions/basics.sql') as f:
