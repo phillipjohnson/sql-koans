@@ -43,6 +43,7 @@ insert into book(id, title, genre, year_published, available) values (4, 'Never 
 insert into book(id, title, genre, year_published, available) values (5, 'The Left Hand of Darkness', 'Speculative fiction', 1969, 1);
 insert into book(id, title, genre, year_published, available) values (6, 'The Gilded Age', 'Novel', 1873, 1);
 insert into book(id, title, genre, year_published, available) values (7, 'The Adventures of Tom Sawyer', 'Satire', 1876, 1);
+insert into book(id, title, genre, year_published, available) values (8, 'Beowulf', 'Epic', 1000, 1);
 
 insert into author(id, first_name, last_name) values (1, 'Charles', 'Dickens');
 insert into author(id, first_name, last_name) values (2, 'Herman', 'Melville');
@@ -50,6 +51,7 @@ insert into author(id, first_name, last_name) values (3, 'Kazuo', 'Ishiguro');
 insert into author(id, first_name, last_name) values (4, 'Ursula', 'Le Guin');
 insert into author(id, first_name, last_name) values (5, 'Mark', 'Twain');
 insert into author(id, first_name, last_name) values (6, 'Charles Dudley', 'Warner');
+insert into author(id, first_name, last_name) values (7, 'Aldous', 'Huxley');
 
 insert into book_to_author_map(book_id, author_id) values (1, 1);
 insert into book_to_author_map(book_id, author_id) values (2, 1);

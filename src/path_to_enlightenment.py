@@ -7,10 +7,10 @@ import sqlite3
 def main():
     queries = load_queries()
     solutions = load_solutions()
-    
+
     climb_mountain(queries, solutions)
 
-mountain_regex = "(--[\w\ \-\)\(,]*)"
+mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>]*)"
 
 def load_queries():
     with open('koans/solutions/basics.sql') as f:
@@ -18,7 +18,7 @@ def load_queries():
         separated = re.split(mountain_regex, text)
         del separated[0] # To remove first empty string
         return zip(separated[0::2], separated[1::2])
-    
+
 def load_solutions():
     with open('koans/solutions/basics.sql') as f:
         text = f.read()
@@ -56,7 +56,7 @@ def climb_mountain(queries, solutions):
             print("Karma-damager: {}".format(sql_error))
             break
         finally:
-            conn.close()    
+            conn.close()
 
 
 if __name__=="__main__":
