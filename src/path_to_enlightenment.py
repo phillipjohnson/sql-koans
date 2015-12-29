@@ -9,10 +9,10 @@ def main():
                 'filtering.sql',
                 'joins.sql',
                 'relationships.sql',
+                'update_delete.sql',
+                'subqueries.sql']
                 
-                
-                
-                'presentation.sql']
+                #'presentation.sql']
     queries = []
     solutions = {}
     
@@ -21,7 +21,7 @@ def main():
         solutions.update(load_solutions(temple))
     climb_mountain(queries, solutions)
 
-mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>%|]*)"
+mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>%|;]*)"
 
 def load_queries(filename):
     with open('koans/solutions/' + filename) as f:
