@@ -13,9 +13,6 @@ select _____ from book
 -- Meditate on selecting some columns (title, available) from a table
 select _____, _____ from book
 
--- Mediate on aliasing the year_published column as "Publication Date"
-select year_published as '_____' from book
-
 -- Meditate on adding a new book
 insert into book(title, genre, year_published, available)
 values('_____', '_____', _____, 1)
