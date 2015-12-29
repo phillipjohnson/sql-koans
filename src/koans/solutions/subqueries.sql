@@ -19,8 +19,8 @@ order by datetime desc
 
 -- Meditate on using subqueries for deleting data
 delete from book
-where _____ in (
-	select _____
+where id in (
+	select book_id
 	from event
 	where type = 'Lost'
 )

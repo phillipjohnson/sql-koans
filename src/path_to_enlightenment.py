@@ -10,9 +10,9 @@ def main():
                 'joins.sql',
                 'relationships.sql',
                 'update_delete.sql',
-                'subqueries.sql']
-                
-                #'presentation.sql']
+                'subqueries.sql',
+                'aggregates.sql',
+                'presentation.sql']
     queries = []
     solutions = {}
     
