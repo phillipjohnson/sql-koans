@@ -7,7 +7,8 @@ import sqlite3
 def main():
     temples = ['basics.sql',
                 'filtering.sql',
-                'joins.sql']
+                'joins.sql',
+                'relationships.sql']
     queries = []
     solutions = {}
     

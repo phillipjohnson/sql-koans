@@ -29,7 +29,7 @@ create table customer (
 );
 
 create table event (
-	id int primary key asc
+	id integer primary key asc autoincrement
 	,type varchar(50) not null
 	,customer_id int not null
 	,book_id int not null
