@@ -1,6 +1,7 @@
 import sqlreader
 import sqltestutils
 
+import os
 import re
 import sqlite3
 
@@ -23,8 +24,13 @@ def main():
 
 mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>%|;]*)"
 
+def get_current_directory():
+    return os.path.dirname(__file__)
+
 def load_queries(filename):
-    with open('koans/solutions/' + filename) as f:
+    path = os.path.join(get_current_directory(), 'koans/', filename)
+    print(path)
+    with open(path) as f:
         text = f.read()
         separated = re.split(mountain_regex, text)
         del separated[0] # To remove first empty string
@@ -32,7 +38,8 @@ def load_queries(filename):
         return [(filename, tup[0], tup[1]) for tup in zipped]
 
 def load_solutions(filename):
-    with open('koans/solutions/' + filename) as f:
+    path = os.path.join(get_current_directory(), 'koans/solutions/', filename)
+    with open(path) as f:
         text = f.read()
         separated = re.split(mountain_regex, text)
         del separated[0] # To remove first empty string
@@ -40,7 +47,8 @@ def load_solutions(filename):
         return {k:v for k,v in grouped}
 
 def refresh_tables(cursor):
-    with open('db/library.sql') as sql_file:
+    path = os.path.join(get_current_directory(), 'db/library.sql')
+    with open(path) as sql_file:
         sql = sql_file.read()
         cursor.executescript(sql)
 
