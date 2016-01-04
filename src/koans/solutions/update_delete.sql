@@ -7,5 +7,3 @@ where id = 2
 delete from customer
 where id = 20001
 
-
-

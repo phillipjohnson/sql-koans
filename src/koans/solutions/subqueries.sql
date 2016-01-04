@@ -7,7 +7,7 @@ where customer_id in (
 )
 order by datetime desc
 
--- Meditate on WITH to create a temporary query
+-- Meditate on WITH to create a Common Table Expression query
 with book_losers as (
 	select c.id from event
 		join customer c on event.customer_id = c.id

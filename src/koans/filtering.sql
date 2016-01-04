@@ -14,7 +14,7 @@ where _____ _____ '_____'
 select * from book
 where _____ in ('_____', '_____')
 
--- Meditate on the "not" operator: select all books that are not novels or satires
+-- Meditate on the "not in" operator: select all books that are not novels or satires
 select * from book
 where _____ not in ('_____', '_____')
 

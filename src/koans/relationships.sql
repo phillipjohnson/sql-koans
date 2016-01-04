@@ -15,4 +15,4 @@ select a.first_name, a.last_name, b.title
 from book b
 	join book_to_author_map map on _____.id = _____.book_id
 	join author a on _____.author_id = _____.id
-where author_id in (5, 6)	
+where author_id in (1, 5, 6)

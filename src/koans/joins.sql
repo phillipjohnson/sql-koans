@@ -30,6 +30,6 @@ from event e
 	join book b on _____.book_id = _____.id
 
 -- Meditate on the "LEFT JOIN" keyword
-select *
+select b.*, e.datetime
 from book b
 	_____ join event e on b.id = e.book_id

@@ -30,7 +30,7 @@ where title like 'The%'
 select * from book
 where title like '%of%'
 
--- Meditate on the "and" operator: select all books that start with 'The' OR are available
+-- Meditate on the "and" operator: select all books published before 1900 that are available
 select * from book
 where year_published < 1900
 and available = 1
