@@ -5,46 +5,51 @@ import os
 import re
 import sqlite3
 
+
 def main():
     temples = ['basics.sql',
-                'filtering.sql',
-                'joins.sql',
-                'relationships.sql',
-                'update_delete.sql',
-                'subqueries.sql',
-                'aggregates.sql',
-                'presentation.sql']
+               'filtering.sql',
+               'joins.sql',
+               'relationships.sql',
+               'update_delete.sql',
+               'subqueries.sql',
+               'aggregates.sql',
+               'presentation.sql']
     queries = []
     solutions = {}
-    
+
     for temple in temples:
         queries.extend(load_queries(temple))
         solutions.update(load_solutions(temple))
     climb_mountain(queries, solutions)
 
+
 mountain_regex = "(--[\w\ \-\)\(,!=\"\':<>%|;]*)"
+
 
 def get_current_directory():
     return os.path.dirname(__file__)
 
+
 def load_queries(filename):
     path = os.path.join(get_current_directory(), 'koans/', filename)
-    print(path)
     with open(path) as f:
         text = f.read()
         separated = re.split(mountain_regex, text)
-        del separated[0] # To remove first empty string
+        del separated[0]  # To remove first empty string
         zipped = zip(separated[0::2], separated[1::2])
         return [(filename, tup[0], tup[1]) for tup in zipped]
+
 
 def load_solutions(filename):
     path = os.path.join(get_current_directory(), 'koans/solutions/', filename)
     with open(path) as f:
         text = f.read()
         separated = re.split(mountain_regex, text)
-        del separated[0] # To remove first empty string
+        del separated[0]  # To remove first empty string
         grouped = zip(separated[0::2], separated[1::2])
-        return {k:v for k,v in grouped}
+        return {k: v for k, v in grouped}
+
 
 def refresh_tables(cursor):
     path = os.path.join(get_current_directory(), 'db/library.sql')
@@ -52,8 +57,8 @@ def refresh_tables(cursor):
         sql = sql_file.read()
         cursor.executescript(sql)
 
+
 def climb_mountain(queries, solutions):
-    reader = sqlreader.SqlReader()
     for temple, koan, query in queries:
         conn = sqlite3.connect(":memory:")
         refresh_tables(conn.cursor())
@@ -81,5 +86,5 @@ def climb_mountain(queries, solutions):
             conn.close()
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
