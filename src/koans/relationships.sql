@@ -2,7 +2,7 @@
 select *
 from customer c
 	join event e on _____ = _____
-where c.id = 20001	
+where c.id = 20001
 
 -- Meditate on MANY-TO-ONE relationships
 select e.*, b.id, b.title
