@@ -78,7 +78,7 @@ def climb_mountain(queries, solutions):
             print("{} in {}.".format(koan[3:], temple))
             break
         except sqlite3.Error as sql_error:
-            print('A koan has damaged your karma! Your SQL is invald.')
+            print('A koan has damaged your karma! Your SQL is invalid.')
             print("Karma-damager: {}".format(sql_error))
             print("{} in {}.".format(koan[3:], temple))
             break
