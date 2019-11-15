@@ -1,8 +1,7 @@
 -- Meditate on using subqueries with IN
 select * from event
 where customer_id in (
-	select c.id from event
-		join customer c on event.customer_id = c.id
+	select customer_id from event
 	where type = 'Lost'
 )
 order by datetime desc
