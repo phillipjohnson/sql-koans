@@ -1,5 +1,5 @@
 -- Meditate on aliasing columns: present the year_published column as "Publication Date"
-select title, year_published "Publication Date"
+select title, year_published as "Publication Date"
 from book
 
 -- Meditate on sorting with "ORDER BY": sort by customer name
