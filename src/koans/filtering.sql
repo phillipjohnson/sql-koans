@@ -8,7 +8,7 @@ where _____ != '_____'
 
 -- Meditate on the <> operator: select all books that are not novels
 select * from book
-where _____ _____ '_____'
+where _____ > '_____'
 
 -- Meditate on the "in" operator: select all novels and satires
 select * from book
