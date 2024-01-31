@@ -1,13 +1,13 @@
 -- Meditate on using subqueries with IN
 select * from event
-where customer_id _____ (
+where customer_id IN (
 	select customer_id from event
 	where type = 'Lost'
 )
 order by datetime desc
 
 -- Meditate on WITH to create a Common Table Expression query
-_____ book_losers as (
+WITH book_losers as (
 	select customer_id from event
 	where type = 'Lost'
 )
@@ -16,8 +16,8 @@ select e.* from book_losers bl
 order by datetime desc
 
 -- Meditate on using subqueries for deleting data
-delete from _____
-where _____ in (
+delete from book
+where id in (
 	select book_id
 	from event
 	where type = 'Lost'
